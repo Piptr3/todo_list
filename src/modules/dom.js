@@ -4,11 +4,11 @@ export function loadUI() {
 
         const listContainer = document.createElement('div');
         listContainer.classList.add('container');
-        listContainer.innerHTML = "My Lists";
+        listContainer.textContent = "My Lists";
 
         const todoContainer = document.createElement('div');
         todoContainer.classList.add('container');
-        todoContainer.innerHTML = "My Todos";
+        todoContainer.textContent = "My Todos";
         
         leftPanel.appendChild(listContainer);
         leftPanel.appendChild(todoContainer);
