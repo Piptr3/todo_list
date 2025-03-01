@@ -12,3 +12,15 @@ function createTodo(title, description, dueDate, priority) {
         }
     };
 }
+
+function createList() {
+    return {
+        todos: [],
+        addTodo(todo) {
+            this.todos.push(todo);
+        },
+        removeTodo(index) {
+            this.todos.slice(index, 1);
+        }
+    }
+}
