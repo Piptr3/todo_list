@@ -1,1 +1,57 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#header {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+#header>h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+#left-panel,
+#right-panel {
+    width: 50%;
+}
+
+#left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.container {
+    border: black solid 2px;
+    height: 250px;
+    width: 500px;
+}
+
+#content {
+    height: 80%;
+    display: flex;
+}
+
+#footer {
+    background-color: lightblue;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right-panel {
+    border-left: 2px black solid;
+    height: 100%;
+}
