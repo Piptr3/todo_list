@@ -54,4 +54,13 @@ body {
 #right-panel {
     border-left: 2px black solid;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liveScreen {
+    width: 650px;
+    border: black solid 2px;
+    height: 650px;
 }

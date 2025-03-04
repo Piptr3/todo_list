@@ -12,4 +12,9 @@ export function loadUI() {
         
         leftPanel.appendChild(listContainer);
         leftPanel.appendChild(todoContainer);
+
+        const liveScreen = document.createElement('div');
+        liveScreen.classList.add('liveScreen');
+        
+        rightPanel.appendChild(liveScreen);
 };
