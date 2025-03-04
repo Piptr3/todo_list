@@ -1,5 +1,6 @@
-export function createList() {
+export function createList(name) {
     return {
+        name: name,
         todos: [],
         addTodo(todo) {
             this.todos.push(todo);

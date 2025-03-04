@@ -9,7 +9,7 @@ export function loadUI() {
 
         const todoContainer = document.createElement('div');
         todoContainer.classList.add('container');
-        listContainer.classList.add('containerT');
+        todoContainer.classList.add('containerT');
         todoContainer.textContent = "My Todos";
         
         leftPanel.appendChild(listContainer);
@@ -32,10 +32,10 @@ export function renderLists(lists) {
         });
 }
 
-export function renderTodos(todos) {
-        const todoContainer = document.querySelector('.containerL');
+export function renderTodos(list) {
+        const todoContainer = document.querySelector('.containerT');
         
-        lists.forEach(list => {
+        list.todos.forEach(todo => {
                 const todoElement = document.createElement('div');
                 todoElement.classList.add('todo');
                 todoElement.textContent = todo.title;
