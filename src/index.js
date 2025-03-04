@@ -17,6 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLists(lists);
     renderTodos(lists[0]);
 });
-
-console.log(lists); // Should show an array with one list object
-console.log(lists[0].name); // Should log "Default"
