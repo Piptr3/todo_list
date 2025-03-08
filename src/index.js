@@ -22,5 +22,5 @@ lists[1].addTodo(todo4);
 document.addEventListener("DOMContentLoaded", () => {
     loadUI();
     renderLists(lists);
-    renderTodos(lists[0]);
+    renderTodos(lists[0], lists);
 });

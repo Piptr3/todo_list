@@ -42,13 +42,13 @@ export function renderLists(lists) {
                 listElement.textContent = list.name;
                 listElement.dataset.index = index;
 
-                listElement.addEventListener('click', () => renderTodos(lists[index]));
+                listElement.addEventListener('click', () => renderTodos(lists[index], lists));
 
                 listContainer.append(listElement);
         });
 }
 
-export function renderTodos(list) {
+export function renderTodos(list, lists) {
         const todoContainer = document.querySelector('.todo-container');
         todoContainer.innerHTML = "";
         
@@ -58,13 +58,13 @@ export function renderTodos(list) {
                 todoElement.textContent = todo.title;
                 todoElement.dataset.index = index;
 
-                todoElement.addEventListener('click', () => displayTodoDetails(todo));
+                todoElement.addEventListener('click', () => displayTodoDetails(todo, lists));
 
                 todoContainer.append(todoElement);
         });
 }
 
-function displayTodoDetails(todo) {
+function displayTodoDetails(todo, lists) {
         const detailsContainer = document.querySelector(".live-screen");
         detailsContainer.innerHTML = `
             <h2>${todo.title}</h2>
@@ -72,4 +72,25 @@ function displayTodoDetails(todo) {
             <p><strong>Due Date:</strong> ${todo.dueDate}</p>
             <p><strong>Priority:</strong> ${todo.priority}</p>
         `;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete Todo";
+        deleteButton.classList.add("delete-button");
+
+        deleteButton.addEventListener("click", () => {
+                deleteTodo(todo, lists);
+        });
+
+        detailsContainer.appendChild(deleteButton);
+}
+
+function deleteTodo(todo, lists) {
+        for (let list of lists) {
+            const todoIndex = list.todos.indexOf(todo);
+            if (todoIndex !== -1) {
+                list.todos.splice(todoIndex, 1);
+                renderTodos(list, lists); 
+                document.querySelector(".live-screen").innerHTML = ""; 
+            }
+        }
     }
