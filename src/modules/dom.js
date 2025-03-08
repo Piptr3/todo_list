@@ -90,7 +90,6 @@ function deleteTodo(todo, lists) {
             if (todoIndex !== -1) {
                 list.todos.splice(todoIndex, 1);
                 renderTodos(list, lists); 
-                document.querySelector(".live-screen").innerHTML = ""; 
             }
         }
     }
