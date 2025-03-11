@@ -41,11 +41,16 @@ export function renderLists(lists) {
                 listElement.classList.add('list');
                 listElement.textContent = list.name;
                 listElement.dataset.index = index;
-
                 listElement.addEventListener('click', () => renderTodos(lists[index], lists));
 
                 listContainer.append(listElement);
         });
+
+        const addList = document.createElement('div');
+        addList.classList.add('list');
+        addList.textContent = "+";
+
+        listContainer.append(addList);
 }
 
 export function renderTodos(list, lists) {
