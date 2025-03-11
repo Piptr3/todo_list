@@ -67,6 +67,12 @@ export function renderTodos(list, lists) {
 
                 todoContainer.append(todoElement);
         });
+
+        const addTodo = document.createElement('div');
+        addTodo.classList.add('todo');
+        addTodo.textContent = "+";
+
+        todoContainer.append(addTodo);
 }
 
 function displayTodoDetails(todo, lists) {
