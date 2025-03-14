@@ -107,7 +107,8 @@ function deleteTodo(todo, lists) {
             }
         }
     }
-    (function() {
+
+(function() {
         let currentList = null;
         let currentLists = null;
     
@@ -143,6 +144,6 @@ function deleteTodo(todo, lists) {
             form.reset();
         });
     
-        // Expose the openTodoDialog function for external usage
         window.openTodoDialog = openTodoDialog;
-    })();
+})();
+
