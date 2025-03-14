@@ -46,6 +46,15 @@ export function renderLists(lists) {
                 listElement.dataset.index = index;
                 listElement.addEventListener('click', () => renderTodos(lists[index], lists));
 
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add('delete-list-button');
+                deleteButton.addEventListener('click', (event) => {
+                event.stopPropagation(); 
+                deleteList(index, lists);
+                });
+                
+                listElement.appendChild(deleteButton);
                 listContainer.append(listElement);
         });
 
@@ -56,6 +65,12 @@ export function renderLists(lists) {
 
         listContainer.append(addList);
 }
+
+function deleteList(index, lists) {
+        lists.splice(index, 1);
+        
+        renderLists(lists);
+    }
 
 export function renderTodos(list, lists) {
         const todoContainer = document.querySelector('.todo-container');
