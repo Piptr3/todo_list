@@ -1,4 +1,5 @@
 import { createTodo } from "./todo.js";
+import { createList } from "./list.js";
 
 
 export function loadUI() {
@@ -187,7 +188,7 @@ function deleteTodo(todo, lists) {
                 const listName = document.getElementById("list-name").value;
         
                 if (listName) {
-                const newList = { name: listName, todos: [] }; 
+                const newList = createList(listName);
                 currentLists.push(newList); 
         
                 renderLists(currentLists); 
