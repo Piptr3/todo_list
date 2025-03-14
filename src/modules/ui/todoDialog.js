@@ -1,5 +1,5 @@
-import { createTodo } from "./todo.js";
-import {renderTodos} from "./todoManager.js"
+import { createTodo } from "../todo/todo.js";
+import {renderTodos} from "../todo/todoManager.js"
 
 export function initTodoDialog() {
     let currentList = null;

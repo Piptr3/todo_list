@@ -1,5 +1,5 @@
-import { createList } from "./list.js";
-import {renderLists} from "./listManager.js"
+import { createList } from "../list/list.js";
+import {renderLists} from "../list/listManager.js"
 
 export function initListDialog() {
     let currentLists = null;

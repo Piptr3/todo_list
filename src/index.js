@@ -1,8 +1,11 @@
 import "./styles.css";
 
-import {loadUI, renderLists, renderTodos} from "./modules/dom.js";
-import {createTodo} from "./modules/todo.js";
-import {createList} from "./modules/list.js";
+import {loadUI} from "./modules/ui/ui.js";
+import {renderLists} from "./modules/list/listManager.js"
+import {createTodo} from "./modules/todo/todo.js";
+import {createList} from "./modules/list/list.js";
+import {initTodoDialog} from "./modules/ui/todoDialog.js";
+import {initListDialog} from "./modules/ui/listDialog.js";
 
 const lists = [
     createList("Default"),
@@ -22,5 +25,7 @@ lists[1].addTodo(todo4);
 document.addEventListener("DOMContentLoaded", () => {
     loadUI();
     renderLists(lists);
-    renderTodos(lists[0], lists);
+    
+    initTodoDialog();
+    initListDialog();
 });

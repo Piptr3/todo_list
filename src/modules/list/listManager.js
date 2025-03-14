@@ -1,4 +1,4 @@
-import {renderTodos} from "./todoManager.js"
+import {renderTodos} from "../todo/todoManager.js"
 
 export function renderLists(lists) {
     const listContainer = document.querySelector('.list-container');
