@@ -1,5 +1,6 @@
 import { createTodo } from "./todo.js";
 
+
 export function loadUI() {
         const leftPanel = document.getElementById("left-panel");
         const rightPanel = document.getElementById("right-panel");
@@ -51,6 +52,7 @@ export function renderLists(lists) {
         const addList = document.createElement('div');
         addList.classList.add('list');
         addList.textContent = "+";
+        addList.addEventListener('click', () => openListDialog(lists));
 
         listContainer.append(addList);
 }
@@ -147,3 +149,38 @@ function deleteTodo(todo, lists) {
         window.openTodoDialog = openTodoDialog;
 })();
 
+(function() {
+
+        let currentLists = null;
+        
+        const listDialog = document.getElementById("list-dialog");
+        const cancelListBtn = document.getElementById("cancel-list");
+        const formList = document.getElementById("list-form");
+
+        function openListDialog(lists) {
+                currentLists = lists;
+                listDialog.showModal();
+        }
+
+        cancelListBtn.addEventListener("click", () => {
+                listDialog.close();
+        });
+
+        formList.addEventListener("submit", (event) => {
+                event.preventDefault();
+        
+                const listName = document.getElementById("list-name").value;
+        
+                if (listName) {
+                const newList = { name: listName, todos: [] }; 
+                currentLists.push(newList); 
+        
+                renderLists(currentLists); 
+                }
+        
+                listDialog.close(); 
+                formList.reset();
+        });
+
+        window.openListDialog = openListDialog;
+})();
