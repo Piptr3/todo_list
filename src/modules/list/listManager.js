@@ -13,7 +13,7 @@ export function renderLists(lists) {
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = "Delete";
-            deleteButton.classList.add('delete-list-button');
+            deleteButton.classList.add('delete-list');
             deleteButton.addEventListener('click', (event) => {
             event.stopPropagation(); 
             deleteList(index, lists);
