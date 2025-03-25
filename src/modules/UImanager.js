@@ -18,6 +18,7 @@ function loadHeader() {
 
 function loadSidebar() {
     const sidebar = document.getElementById("sidebar");
+
 }
 
 function loadMain() {
