@@ -1,8 +1,8 @@
 export function loadUI() {
-    loadHeader()
+    loadHeader();
+    loadSidebar();
     loadMain();
-    loadFooter()
-    
+    loadFooter();
 }
 
 function loadHeader() {
@@ -14,6 +14,10 @@ function loadHeader() {
 
     header.appendChild(logo);
 
+}
+
+function loadSidebar() {
+    const sidebar = document.getElementById("sidebar");
 }
 
 function loadMain() {
